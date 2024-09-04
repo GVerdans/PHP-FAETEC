@@ -1,7 +1,7 @@
 <?php
 
-class Calculadora{
-    public function efetuarCalculo($valor1, $valor2, $operacao){
+class Calculadora{ // Clase
+    public function efetuarCalculo($valor1, $valor2, $operacao){ // Método
         $resultado="";
         switch($operacao){
             case 'soma':
