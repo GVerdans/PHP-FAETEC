@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Fuso Horário</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="controller_fusoHorario.js"></script>
+    <link rel="stylesheet" href="fusohorario.css">
+</head>
+<body>
+    <h1>Fuso Horário</h1>
+    
+    <form>
+        <label for="cidade">Escolha uma cidade:</label>
+        <select id="cidade" name="cidade">
+            <option value="Tokyo">Tokyo</option>
+            <option value="London">London</option>
+            <option value="Nova York">Nova York</option>
+            <option value="Dubai">Dubai</option>
+            <option value="Sydney">Sydney</option>
+            <option value="São Paulo">São Paulo</option>
+        </select>
+        <button id="botao_obter_horario">Obter Horário</button>
+    </form>
+    
+    <div id="resultado"></div>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="controller_MediaAluno.js"></script>
+    <link rel="stylesheet" href="aluno.css">
+
+    <title>Media do Aluno</title>
+</head>
+
+<body>
+<div id="fomulario">
+    
+    <form id="formAluno">
+
+        <label for="nome">Nome:
+            <input type="text" name="nome" id="nome" class="ipt_entradas">
+        </label>
+        
+        <label for="nota1">Primeira Nota:
+            <input type="text" name="nota1" id="nota1" class="ipt_entradas">
+        </label>
+        
+        <label for="nota2">Segunda Nota:
+            <input type="text" name="nota2" id="nota2" class="ipt_entradas">
+        </label>
+        
+        <div id="btn">
+            <input type="button" value="Verificar Situação !" name="verificar_situacao" id="verificar_situacao">
+        </div>
+            
+        
+        <div id="resultado"></div>
+        
+    </form>
+    
+    
+</div>
+</body>
+
+</html>
