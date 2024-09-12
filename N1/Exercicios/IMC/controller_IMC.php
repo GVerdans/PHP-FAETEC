@@ -13,8 +13,8 @@ $descricaoDoIndice = $IMC->descricao($VRFSituacao);
 
 $mensagem = "
 O seu IMC foi: $valorDoIMC <br><br>
-A sua situação é: $VRFSituacao <br><br>
-A descrição da sua Situação é: $descricaoDoIndice
+A sua situação é: $VRFSituacao <br>
+$descricaoDoIndice
 ";
 
 echo $mensagem;

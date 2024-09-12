@@ -12,33 +12,27 @@
 </head>
 
 <body>
-<div id="fomulario">
     
-    <form id="formAluno">
+    <form>
 
-        <label for="nome">Nome:
-            <input type="text" name="nome" id="nome" class="ipt_entradas">
-        </label>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" class="ipt_entradas">
         
-        <label for="nota1">Primeira Nota:
-            <input type="text" name="nota1" id="nota1" class="ipt_entradas">
-        </label>
+        <label for="nota1">Primeira Nota:</label>
+        <input type="number" name="nota1" id="nota1" class="ipt_entradas">
         
-        <label for="nota2">Segunda Nota:
-            <input type="text" name="nota2" id="nota2" class="ipt_entradas">
-        </label>
+        <label for="nota2">Segunda Nota:</label>
+        <input type="number" name="nota2" id="nota2" class="ipt_entradas">
+        <br><br>
+        <input type="button" value="Verificar Situação !" name="verificar_situacao" id="verificar_situacao">
         
-        <div id="btn">
-            <input type="button" value="Verificar Situação !" name="verificar_situacao" id="verificar_situacao">
-        </div>
+            <br><br>
+        
             
-        
-        <div id="resultado"></div>
-        
+            <div id="resultado"></div>
     </form>
     
     
-</div>
 </body>
 
 </html>

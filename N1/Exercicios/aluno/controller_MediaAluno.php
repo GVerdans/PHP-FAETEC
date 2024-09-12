@@ -4,7 +4,7 @@ include 'MediaAluno.php';
 
 $aluno =  new Aluno(); // instanciando a classe.
 
-$nome = $_POST["nome"];
+$nome = strtoupper($_POST["nome"]);
 $nota1 = $_POST["nota1"];
 $nota2 = $_POST["nota2"];
 

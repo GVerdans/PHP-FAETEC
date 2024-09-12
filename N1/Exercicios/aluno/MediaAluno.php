@@ -12,12 +12,12 @@ class Aluno{ // classe
         $situacao = "";
 
         if ($media >= 7){
-            $situacao = "Aprovado !";
+            $situacao = "Aprovado ! ";
         } else {
             $situacao = "Reprovado !";
         }
         
-        return $situacao;
+        return strtoupper($situacao); // fazendo testes.
     }
 }
 ?>
