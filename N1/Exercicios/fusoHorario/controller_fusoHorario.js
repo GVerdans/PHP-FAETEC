@@ -3,6 +3,7 @@ $(function() {
         var cidade = $("#cidade").val();
 
         // console.log(cidade);
+        // Podem entrar validações aqui
 
         $.ajax({
             type: "POST",

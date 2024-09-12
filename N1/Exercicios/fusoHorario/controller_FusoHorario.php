@@ -2,7 +2,7 @@
 
 include "FusoHorario.php";
 
-$fusoHorario = new FusoHorario();
+$fusoHorario = new FusoHorario(); // instanciar a classe
 
 $cidade = $_POST['cidade'];
 
