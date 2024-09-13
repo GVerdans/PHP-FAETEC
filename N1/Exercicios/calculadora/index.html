@@ -13,7 +13,7 @@
 
 <body>
     <form>
-        <input name="valor1" id="valor1" type="text" size="5" />
+        <input name="valor1" id="valor1" type="number" size="5" />
         <label id="somar">
             <input type="radio" name="operador" class="op" id="somar" value="soma" /> +
         </label>
@@ -28,11 +28,11 @@
             <input type="radio" name="operador" class="op" id="dividir" value="divisao" /> /
         </label>
 
-        <input name="valor2" id="valor2" type="text" size="5" value="" />
-        <div class="button-result-container">
-            <button id="botao_calcular"> Calcular </button>
-            <div id="resultado"></div>
-        </div>
+        <input name="valor2" id="valor2" type="number" size="5" value="" />
+        
+        <button id="botao_calcular"> Calcular </button>
+
+        <div id="resultado"></div>
     </form>
 
 
