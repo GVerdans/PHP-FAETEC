@@ -9,7 +9,7 @@ $(function() {
 
         // Podem entrar validações aqui.
 
-        if (nome == ''){
+        if (nome == '' || nome == Number(nome)){
             alert ('Isira seu Nome !');
             return false;
         }
@@ -18,6 +18,13 @@ $(function() {
             alert('Insira notas entre 1 e 10 !');
             return false;
         }
+
+        if (nota1 == "" || nota2 == ""){
+            alert('Digite suas notas !')
+            return false;
+        }
+
+
 
         // Final das validações.
         
