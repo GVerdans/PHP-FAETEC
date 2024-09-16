@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="controller_IMC.js"></script>
+    <link rel="stylesheet" href="IMC.css">
+
+    <title>Índice de Massa Corporal</title>
+</head>
+<body>
+
+
+    
+    <div id="AgaUm">
+        <h1>Calculo de IMC</h1>
+    </div>
+    
+    <form>
+        
+        <label for="nome">Insira seu Nome:
+            <input type="text" name="nome" id="nome">
+        </label>
+
+        <br>
+
+        <label for="peso">Insira seu peso (em Kg):
+            <input type="text" name="peso" id="peso">
+        </label>
+
+        <br>
+
+        <label for="altura">Insira sua Altura (em Metros):
+            <input type="text" name="altura" id="altura">
+        </label>
+
+        <br>
+
+        <input type="submit" value="Calcular !" id="btn_calcular">
+
+        <div id="resultado"></div>
+    </form>
+    
+</body>
+</html>
