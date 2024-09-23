@@ -1,0 +1,42 @@
+/* Estilização básica para os elementos */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+h2 {
+    font-size: 18px;
+    color: #666;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+#jogo1, #jogo2 {
+    font-size: 24px;
+    color: #007BFF;
+}
+
+#instrucoes {
+    font-style: italic;
+    color: #666;
+}
