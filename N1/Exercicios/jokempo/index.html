@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokempô</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="controller_Jokempo.js"> </script>
+    
+    <link rel="stylesheet" href="Jokempo.css">
+    
+</head>
+<body>
+    <h1>Escolha a jogada :</h1>
+    <div>
+        
+        <div class="div-1">
+            <label>
+              <input type="radio" name="jogada" 
+              class="jogada"  value="Pedra">
+              <!-- TAG DE IMAGEM NO HTML IMG SRC -->
+              <img src="images/Pedra.png">
+            </label>
+        </div>
+
+        <div class="div-2">
+            <label>
+              <input type="radio" name="jogada" 
+              class="jogada" value="Papel">
+              <img src="images/Papel.png">
+            </label>
+        </div>
+        
+        <div class="div-3">
+            <label>
+              <input type="radio" name="jogada"
+               class="jogada"  value="Tesoura">
+              <img src="images/Tesoura.png">
+            </label>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div id="msg_jokempo"></div>
+    
+</body>
+</html>

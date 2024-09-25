@@ -1,0 +1,64 @@
+
+.jogada {
+    opacity: 0;
+    position: absolute;
+    left: -9999px;
+    }
+    /* Estilo das divs */
+.div-1, .div-2, .div-3 {
+width: 33.33%; /* Para distribuir igualmente o espaço entre as divs */
+box-sizing: border-box; /* Incluir a largura da borda e do padding na largura total */
+padding: 10px; /* Adicione espaço de preenchimento conforme necessário */
+float: left; /* Flutuar as divs à esquerda */
+text-align: center;
+height: 235px;
+}
+
+/* Exemplo de estilos adicionais para as divs */
+.div-1 {
+background-color: #f00;
+
+}
+
+.div-2 {
+background-color: #0f0;
+}
+
+.div-3 {
+background-color: #00f;
+}
+
+.clearfix::after {
+content: "";
+display: table;
+clear: both;
+} /* Clearfix para limpar o float */
+
+h1 {
+font-size: 36px; /* Tamanho da fonte */
+color: #ff6b6b; /* Cor do texto */
+text-align: center; /* Alinhamento do texto ao centro */
+text-transform: uppercase; /* Transforma o texto em letras maiúsculas */
+margin-top: 50px; /* Margem superior de 50 pixels */
+margin-bottom: 30px; /* Margem inferior de 30 pixels */
+text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Sombra do texto */
+}
+
+.piscante {
+animation: piscar 1s linear infinite;
+margin-top: 25%;
+color: gold;
+text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Sombra do texto */
+}
+
+@keyframes piscar {
+0% {
+    opacity: 1;
+}
+50% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
