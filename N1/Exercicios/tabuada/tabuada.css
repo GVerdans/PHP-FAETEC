@@ -1,0 +1,61 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #343635;
+}
+
+div#tabu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: 3px solid #fff;
+    /* border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%); */
+    /* border-image-slice: 1; */
+    box-shadow: 0 0 5px #fff;
+    border-radius: 10px;
+
+    background-color: #77b8a6;
+
+    height: 60%;
+    width: auto;
+
+    text-align: center;
+  }
+
+  h1{
+    padding:0 20px;
+    color: #343635;
+  }
+
+  #num{
+    text-align: center;
+    width: 25%;
+
+    /* appearance: none;
+    outline-style: none;
+
+    background-color: dodgerblue;
+    color: #fff;
+    border: none; */
+    border-radius: 2px;
+  }
+
+  option{
+    background-color: transparent;
+  }
+
+  /* #num:focus{
+    outline: #343635;
+  } */
+  
+  #msg_tabuada{
+    font-size: larger;
+    padding: 10px;
+    height: auto;
+    color: #343635;
+    font-weight: bold;
+  }
