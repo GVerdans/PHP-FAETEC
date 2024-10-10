@@ -41,24 +41,18 @@ while ($semana <= 52){
 // POR MES.
 
 $semana = 1;
+$mes = 1;
 $total = 0;
-
 while ($semana <= 52){
-    // $dinheiros="";
-       
-    $dinheiros = $semana;
-    
     $total += $semana;
-    
     // $semana++;
     
-    if($dinheiros % 4 == 0){
-           $mes=$semana/4;
-           echo "Acumulado do mes $mes<br> R$ $total<hr>";
+    if($semana % 4 == 0){
+        //    $mes=$semana/4;
+           echo "Acumulado do mês $mes<br> R$ $total<hr>";
            $mes++;
     }
     $semana++;
 }
-
 
 ?>
