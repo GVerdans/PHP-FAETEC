@@ -1,0 +1,19 @@
+/* Estilo para o corpo da página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Estilo para os checkboxes de frutas */
+input[type="checkbox"] {
+  margin: 5px;
+}
+
+/* Estilo para a mensagem de frutas selecionadas */
+#msg_frutas {
+  background-color: #fff;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+}
