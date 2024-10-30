@@ -1,0 +1,81 @@
+MySQL // phpMyAdmin
+
+/* 
+Propriedades da Tabela
+not null - Obrigatório -- Não Nulo
+int - Número Inteiro
+primary key - Chave Primária
+Auto_increment - Sistema Gera o ID
+varchar(x) - Quantidade de Caracteres MAX
+
+// Dados numéricos
+4800.99 - Sem aspas
+2021-09-05 - datas em formato americano
+*/
+
+
+create database php202402 // Criar BD
+use php202402 // Entra no BD
+
+
+// Cria a Tabela
+create table cliente(
+idCliente int not null primary key Auto_increment,
+CodigoDoCliente varchar(50),
+NomeDaEmpresa varchar(50),
+NomeDoContato varchar(50),
+Cidade varchar(30)
+)
+
+
+// Inserindo dados na tabela (por ordem \/)
+insert into cliente (CodigoDoCliente, NomeDaEmpresa, NomeDoContato, Cidade)
+values
+('RJ01', 'FAETECH', 'Gabriel', 'Rio de Janeiro')
+
+
+//Inserção de Múltiplos dados
+insert into cliente (CodigoDoCliente, NomeDaEmpresa, NomeDoContato, Cidade)
+values
+('RJ05', 'REDE GRAAL', 'Danielle', 'Rio de Janeiro'), ('RJ06', 'ARTHUR LANCHES', 'Arthur', 'Rio de Janeiro')
+
+SELECT * FROM clientes // Exibe a tabela -- * Igual do CSS (todos)
+SELECT NomeDaEmpresa, Cidade // Exibe só os Campos NomeDaEmpresa, Cidade
+
+//Exibe só os Campos NomeDaEmpresa, Cidade Ordenados por NomeDaEmpresa
+SELECT NomeDaEmpresa, Cidade
+from cliente
+order by NomeDaEmpresa
+
+// 
+SELECT NomeDaEmpresa, Cidade
+from cliente
+where Cidade = 'Rio de Janeiro' -- Vai exibir só as linhas onde Cidade = 'Rio de Janeiro'
+order by NomeDaEmpresa
+
+//
+SELECT NomeDoContato, NomeDaEmpresa, Cidade
+from cliente
+where Cidade = 'Rio de Janeiro' -- Vai Exibir as linhas onde Cidade = 'Rio de Janeiro'
+and NomeDoContato like 'M%'  -- Vai exibir os Contatos com Começam com a letra 'M'.
+and -- Se houver outro filtro.
+order by NomeDoContato
+
+// UPDATE
+
+UPDATE cliente set                -- UPDATE tabela set
+NomeDoContato = 'Verdan'          -- Coluna = 'NovoValor'
+where idCliente = '1'             -- onde idDoRegistro
+
+
+UPDATE cliente set
+NomeDoContato = 'Verdan', NomeDaEmpresa = 'FAETEC'
+where idCliente = '1'     
+
+// DELETAR a linha onde idCliente = '5'
+DELETE from cliente
+where idCliente = '5'
+
+
+
+
