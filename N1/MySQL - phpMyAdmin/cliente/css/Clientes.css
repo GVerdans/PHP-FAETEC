@@ -1,0 +1,32 @@
+/* Adicione estilos aqui */
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.starter-template {
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.modal-title {
+  color: #007bff;
+}
+
+.modal-body {
+  background-color: #f8f9fa;
+}
+
+/* Adicione mais estilos conforme necessário */
