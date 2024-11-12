@@ -40,34 +40,39 @@ class Cliente{
         $con = $conexao -> conectarBanco();
 
 
-        $CodigoDoCliente = 'RS01';
-        $NomeDaEmpresa = 'Lanches do Gui';
-        $NomeDoContato = 'Guilherme';
-        $Cidade = 'Rio Grande do Sul';
+        // $CodigoDoCliente = $_POST;
+        // $NomeDaEmpresa = 'Lanches do Gui';
+        // $NomeDoContato = 'Guilherme';
+        // $Cidade = 'Rio Grande do Sul';
+        
+        $consultarVerificacao = "SELECT * FROM cliente WHERE CodigoDoCliente = '$CodigoDoCliente'";
+        $resultadoVerificacao = mysqli_query($con, $consultarVerificacao);
 
+        if(mysqli_num_rows($resultadoVerificacao) > 0){
+            $msg = "Código do Cliente $CodigoDoCliente, já existe !";
 
-        $consulta = "insert into cliente
-        (CodigoDoCliente, NomeDaEmpresa, NomeDoContato, Cidade)
-        values
-        ('$CodigoDoCliente', '$NomeDaEmpresa', '$NomeDoContato', '$Cidade')";
-
-        $resultado = mysqli_query($con, $consulta)
-        or die ('Falha na inserção de Dados na tabela clientes');
-
-        echo "Dados Inserido na tabela <b>CLIENTE</b>!<br><br>";
-        echo "<b>Codigo do Cliente:</b> $CodigoDoCliente<br>";
-        echo "<b>Nome da Empresa:</b> $NomeDaEmpresa<br>";
-        echo "<b>Nome do Contato:</b> $NomeDoContato<br>";
-        echo "<b>Cidade:</b> $Cidade<br>";
-        echo'<hr>';
+        } else {
+            
+            $consulta = "insert into cliente
+            (CodigoDoCliente, NomeDaEmpresa, NomeDoContato, Cidade)
+            values
+            ('$CodigoDoCliente', '$NomeDaEmpresa', '$NomeDoContato', '$Cidade')";
+            
+            mysqli_query($con, $consulta)
+            or die ('Falha na inserção de Dados na tabela cliente');
+            
+            $msg = "Dados da empresa $NomeDaEmpresa Adicionados com Sucesso <3 !";
+        }
+            
+            return $msg;
     }
 
     public function alterarCliente($idCliente, $CodigoDoCliente, $NomeDaEmpresa, $NomeDoContato, $Cidade){
         $conexao = new Conexao();
         $con = $conexao -> conectarBanco();
 
-        $CodigoDoCliente = 'RJ01';
-        $NomeDoContato = 'Gabriel Verdan';
+        // $CodigoDoCliente = 'RJ01';
+        // $NomeDoContato = 'Gabriel Verdan';
         
         
         $consulta = "update cliente
@@ -79,25 +84,25 @@ class Cliente{
         
         echo ("Dados alterados com Sucesso !<br><br>");
         
-        echo "<b>Codigo do Cliente:</b> $CodigoDoCliente<br>";
-        echo "<b>Nome do Contato:</b> $NomeDoContato<br>";
-        echo'<hr>';
+        // echo "<b>Codigo do Cliente:</b> $CodigoDoCliente<br>";
+        // echo "<b>Nome do Contato:</b> $NomeDoContato<br>";
+        // echo'<hr>';
     }
     
     public function excluirCliente($idCliente){
         $conexao = new Conexao();
         $con = $conexao -> conectarBanco();
         
-        $CodigoDoCliente = 'RS01';
+        // $CodigoDoCliente = 'RS01';
 
-        $consulta = "delete from cliente where CodigoDoCliente = '$CodigoDoCliente'";
+        $consulta = "DELETE FROM cliente WHERE idCliente = '$idCliente'";
         
         $resultado = mysqli_query($con, $consulta)
-        or die ("Falha na Alteração !");
+        or die ("Falha na Exclusão !");
         
-        echo ("Registro Excluido com Sucesso !<br><br>");
-        
-        echo "<b>Codigo do Cliente Excluido:</b> $CodigoDoCliente<br>";
+        $msg = "Exclusão do Registro ($idCliente) Realizada com Sucesso ! ='(";
+
+        return $msg;
     }
 
     public function selecionarUmCliente($idCliente){

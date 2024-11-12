@@ -16,7 +16,7 @@ $(function(){
 						
 		$.ajax({
 			type:"POST",
-			url:"../Controller_Clientes.php",
+			url:"./PHP/Controller_Clientes.php",
 			data:"acao="+acao+"&codigo="+codigo
 			+"&empresa="+empresa+"&contato="+contato+
 			"&cidade="+cidade,
@@ -29,13 +29,13 @@ $(function(){
 
 
 		$(".excluir_cliente").click(function(){				
-			var acao = 'excluir'
+			var acao = 'excluir';
 			var IdCliente = $(this).attr("id");		
 			if(confirm("Confirma a Exclusão ?"))
 			{
 				$.ajax({
 				type:"GET",
-				url:"../Controller_Clientes.php",
+				url:"./PHP/Controller_Clientes.php",
 				data:"acao="+acao+"&IdCliente="+IdCliente,
 				success: function(msg){
 					alert(msg);
@@ -44,8 +44,7 @@ $(function(){
 				});				
 			}
 			});
-			
-			
+						
 			
 
 			$("#alterar_cliente").click(function(){
@@ -58,7 +57,7 @@ $(function(){
 			
 				$.ajax({
 					type:"POST",
-					url:"../Controller_Clientes.php",
+					url:"./PHP/Controller_Clientes.php",
 					data:"acao="+acao+"&idcliente="+idcliente+"&codigo="+codigo
 					+"&empresa="+empresa+"&contato="+contato+"&cidade="+cidade,
 					success: function(msg){
@@ -74,7 +73,7 @@ $(function(){
 					var IdCliente = $(this).attr("id");			
 						$.ajax({
 						type:"GET",
-						url:"../Controller_Clientes.php",
+						url:"./PHP/Controller_Clientes.php",
 						data:"acao="+acao+"&IdCliente="+IdCliente,
 						success: function(msg){
 							$("#modal-edicao").modal('show');
