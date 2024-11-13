@@ -16,7 +16,7 @@ $(function(){
 						
 		$.ajax({
 			type:"POST",
-			url:"./PHP/Controller_Clientes.php",
+			url:"./PHP/controller_Clientes.php",
 			data:"acao="+acao+"&codigo="+codigo
 			+"&empresa="+empresa+"&contato="+contato+
 			"&cidade="+cidade,
@@ -35,7 +35,7 @@ $(function(){
 			{
 				$.ajax({
 				type:"GET",
-				url:"./PHP/Controller_Clientes.php",
+				url:"./PHP/controller_Clientes.php",
 				data:"acao="+acao+"&IdCliente="+IdCliente,
 				success: function(msg){
 					alert(msg);
@@ -57,7 +57,7 @@ $(function(){
 			
 				$.ajax({
 					type:"POST",
-					url:"./PHP/Controller_Clientes.php",
+					url:"./PHP/controller_Clientes.php",
 					data:"acao="+acao+"&idcliente="+idcliente+"&codigo="+codigo
 					+"&empresa="+empresa+"&contato="+contato+"&cidade="+cidade,
 					success: function(msg){
@@ -73,7 +73,7 @@ $(function(){
 					var IdCliente = $(this).attr("id");			
 						$.ajax({
 						type:"GET",
-						url:"./PHP/Controller_Clientes.php",
+						url:"./PHP/controller_Clientes.php",
 						data:"acao="+acao+"&IdCliente="+IdCliente,
 						success: function(msg){
 							$("#modal-edicao").modal('show');

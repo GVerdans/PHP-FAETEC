@@ -48,7 +48,7 @@
     </thead>
  
       <?php
-      include '.\PHP\Cliente.php';
+      include '.\PHP\cliente.php';
       $cliente = new Cliente();
       $listar = $cliente -> listarClientes();
       echo $listar;
@@ -92,16 +92,15 @@
 <div class="modal fade" id="modal-edicao">
  <div class="modal-dialog">
   <div class="modal-content">           
-       <h2 class="modal-title" 
-       id="modal-titulo-edicao">Editar Cliente </h2>
-      <div class="modal-body" id="modal-corpo-edicao" style="background-color: cadetblue;">
+       <h2 class="modal-title" id="modal-titulo-edicao">Editar Cliente </h2>
+      
+       <div class="modal-body" id="modal-corpo-edicao" style="background-color: cadetblue;">
+
       </div>
+
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" 
-        data-dismiss="modal" name="alterar_cliente" 
-        id="alterar_cliente">Alterar</button>
-          <button type="button" class="btn btn-default" 
-          data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-default"  data-dismiss="modal" name="alterar_cliente"  id="alterar_cliente">Alterar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
      </div>
   </div>
 </div>
