@@ -13,20 +13,22 @@ $(function(){
 		var empresa = $("#empresa").val();
 		var contato = $("#contato").val();
 		var cidade = $("#cidade").val(); 
+		var email = $("#email").val(); 
+		var telefone = $("#telefone").val(); 
 						
 		$.ajax({
 			type:"POST",
 			url:"./PHP/controller_Clientes.php",
 			data:"acao="+acao+"&codigo="+codigo
 			+"&empresa="+empresa+"&contato="+contato+
-			"&cidade="+cidade,
+			"&cidade="+cidade+"&email="+email+"&telefone="+telefone,
 			success: function(msg){
 				alert(msg);
 				$("#modal-inclusao").modal('hide');
 				window.location.reload();}
 			});		
 		});
-
+		
 
 		$(".excluir_cliente").click(function(){				
 			var acao = 'excluir';
@@ -54,12 +56,14 @@ $(function(){
 				var empresa = $("#NomeDaEmpresa").val();
 				var contato = $("#NomeDoContato").val();
 				var cidade = $("#NomeDaCidade").val(); 
+				var email = $("#Email").val();
+				var telefone = $("#Telefone").val();
 			
 				$.ajax({
 					type:"POST",
 					url:"./PHP/controller_Clientes.php",
-					data:"acao="+acao+"&idcliente="+idcliente+"&codigo="+codigo
-					+"&empresa="+empresa+"&contato="+contato+"&cidade="+cidade,
+					data:"acao="+acao+"&idcliente="+idcliente+"&codigo="+codigo+"&empresa="+empresa+"&contato="+contato+"&cidade="+cidade+
+					"&email="+email+"&telefone="+telefone,
 					success: function(msg){
 						alert(msg);						
 						window.location.reload();

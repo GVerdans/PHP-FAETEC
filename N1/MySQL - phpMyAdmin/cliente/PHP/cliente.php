@@ -18,6 +18,8 @@ class Cliente{
             $NomeDaEmpresa = $linha['NomeDaEmpresa'];
             $NomeDoContato = $linha['NomeDoContato'];
             $Cidade = $linha['Cidade'];
+            $email = $linha['email'];
+            $Telefone = $linha['telefone'];
             $idCliente = $linha['idCliente'];
 
             $tabela .="<tr>";
@@ -25,6 +27,8 @@ class Cliente{
             $tabela .="<td>$NomeDaEmpresa</td>";
             $tabela .="<td>$NomeDoContato</td>";
             $tabela .="<td>$Cidade</td>";
+            $tabela .="<td>$email</td>";
+            $tabela .="<td>$Telefone</td>";
 
             $tabela .= "<td><button type='button' id='$idCliente' class='btn btn-success editar_cliente'>Editar</button>
                         <button type='button' id='$idCliente' class='btn btn-danger excluir_cliente'>Excluir</buton> </td>";
@@ -33,9 +37,9 @@ class Cliente{
         }
 
         return $tabela;
-    }
+    } // OK
 
-    public function inserirCliente($CodigoDoCliente, $NomeDaEmpresa, $NomeDoContato, $Cidade){
+    public function inserirCliente($CodigoDoCliente, $NomeDaEmpresa, $NomeDoContato, $Cidade, $email, $Telefone){
         $conexao = new Conexao();
         $con = $conexao -> conectarBanco();
 
@@ -54,9 +58,9 @@ class Cliente{
         } else {
             
             $consulta = "insert into cliente
-            (CodigoDoCliente, NomeDaEmpresa, NomeDoContato, Cidade)
+            (CodigoDoCliente, NomeDaEmpresa, NomeDoContato, Cidade, email, Telefone)
             values
-            ('$CodigoDoCliente', '$NomeDaEmpresa', '$NomeDoContato', '$Cidade')";
+            ('$CodigoDoCliente', '$NomeDaEmpresa', '$NomeDoContato', '$Cidade', '$email', '$Telefone')";
             
             mysqli_query($con, $consulta)
             or die ('Falha na inserção de Dados na tabela cliente');
@@ -67,7 +71,7 @@ class Cliente{
             return $msg;
     }
 
-    public function alterarCliente($idCliente, $CodigoDoCliente, $NomeDaEmpresa, $NomeDoContato, $Cidade){
+    public function alterarCliente($idCliente, $CodigoDoCliente, $NomeDaEmpresa, $NomeDoContato, $Cidade, $email, $telefone){
         $conexao = new Conexao();
         $con = $conexao -> conectarBanco();
 
@@ -75,13 +79,15 @@ class Cliente{
         CodigoDoCliente = '$CodigoDoCliente',
         NomeDaEmpresa = '$NomeDaEmpresa',
         NomeDoContato = '$NomeDoContato',
-        Cidade = '$Cidade'
+        Cidade = '$Cidade',
+        email = '$email',
+        telefone = '$telefone'
         WHERE idCliente = $idCliente";
         
         $resultado = mysqli_query($con, $consulta)
         or die ($consulta);
         
-        echo ("Dados alterados com Sucesso !");
+        echo ('Dados Alterados com Sucesso !');
     }
     
     public function excluirCliente($idCliente){
@@ -111,13 +117,33 @@ class Cliente{
         $tabela = "";
 
             while($linha = mysqli_fetch_assoc($resultado)){
-                $tabela .= "<p><input type='hidden' id ='IdCliente' value ='" . $linha['idCliente'] . "'></p>";
-                $tabela .= "<p><input type='text' id ='CodigoDoCliente' value ='" . $linha['CodigoDoCliente'] . "'></p>";
-                $tabela .= "<p><input type='text' id ='NomeDaEmpresa' value ='" . $linha['NomeDaEmpresa'] . "'></p>";
-                $tabela .= "<p><input type='text' id ='NomeDoContato' value ='" . $linha['NomeDoContato'] . "'></p>";
-                $tabela .= "<p><input type='text' id ='NomeDaCidade' value ='" . $linha['Cidade'] . "'></p>";
+                $tabela .= "<p><input type='hidden' name='idcliente' id ='IdCliente' value ='" . $linha['idCliente'] . "'></p>";
+
+                $tabela .= "<p> <label for='codcliente'><b>Codigo Do Cliente:<br></b>
+                <input type='text' name='codcliente' id ='CodigoDoCliente' value ='" . $linha['CodigoDoCliente'] . "'>
+                </label></p>";
+
+                $tabela .= "<p> <label for='nomedaempresa'><b>Nome da Empresa:<br></b> 
+                <input type='text' id ='NomeDaEmpresa' name='nomedaempresa' value ='" . $linha['NomeDaEmpresa'] . "'> 
+                </label></p>";
+
+                $tabela .= "<p><label for='nomedocontato'><b>Nome do Contato:<br></b>
+                <input type='text' id ='NomeDoContato' name='nomedocontato' value ='" . $linha['NomeDoContato'] . "'>
+                </label></p>";
+                
+                $tabela .= "<p><label for=''nomedacidade><b>Nome da Cidade:<br></b>
+                <input type='text' id ='NomeDaCidade' name='nomedacidade' value ='" . $linha['Cidade'] . "'>
+                </label></p>";
+                
+                $tabela .= "<p><label for='email'><b>Digite o E-mail da Empresa/Contato:<br></b>
+                <input type='text' id ='Email' value ='" . $linha['email'] . "'>
+                </label></p>";
+
+                $tabela .= "<p><label for='telefone'><b>Digite o Telefone da Empresa/Contato:<br></b>
+                <input type='text' id ='Telefone' value ='" . $linha['telefone'] . "'>
+                </label></p>";
             }
-        
+            
         return $tabela;
 
 

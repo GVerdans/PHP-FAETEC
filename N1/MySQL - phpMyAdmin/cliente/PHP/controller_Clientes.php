@@ -12,8 +12,10 @@ switch($acao){
         $empresa = $_REQUEST['empresa'];
         $contato = $_REQUEST['contato'];
         $cidade = $_REQUEST['cidade'];
+        $email = $_REQUEST['email'];
+        $telefone = $_REQUEST['telefone'];
 
-        $inserirCli = $cliente -> inserirCliente($codigo, $empresa, $contato, $cidade);
+        $inserirCli = $cliente -> inserirCliente($codigo, $empresa, $contato, $cidade, $email, $telefone);
 
         echo $inserirCli;
     break;
@@ -43,8 +45,10 @@ switch($acao){
         $empresa = $_REQUEST['empresa'];
         $contato = $_REQUEST['contato'];
         $cidade = $_REQUEST['cidade'];
+        $email = $_REQUEST['email'];
+        $telefone = $_REQUEST['telefone'];
 
-        $alterar = $cliente -> alterarCliente($id, $codigo, $empresa, $contato, $cidade);
+        $alterar = $cliente -> alterarCliente($id, $codigo, $empresa, $contato, $cidade, $email, $telefone);
 
         echo $alterar;
     break;

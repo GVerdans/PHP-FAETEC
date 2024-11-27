@@ -1,7 +1,8 @@
 /* Adicione estilos aqui */
 
 body {
-  font-family: Arial, sans-serif;
+  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+  background-color: #e9e2da;
 }
 
 .container {
@@ -18,11 +19,13 @@ body {
 }
 
 .table {
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 
 .modal-title {
-  color: #007bff;
+  color: #000;
+  text-align: center;
+  font-weight: bold;
 }
 
 .modal-body {
@@ -30,3 +33,17 @@ body {
 }
 
 /* Adicione mais estilos conforme necessário */
+
+th{
+  border-radius: 1.2rem;
+}
+
+#alterar_cliente{
+  background-color: #007bff;
+  color: #fff;
+}
+
+#fechar_alt{
+  background-color: red;
+  color: #fff;
+}
